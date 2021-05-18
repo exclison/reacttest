@@ -16,9 +16,16 @@ export default class LifeCyclePage extends Component {
     console.log("constructor");
   }
 
-  componentWillMount() {
-    console.log("componentWillMount");
+  //render之前执行
+  static getDerivedStateFromProps(props,state){
+      console.log('getDerivedStateFromProps')
+      const {count} = state
+      return count > 5 ? {count:0} : null
   }
+
+//   UNSAFE_componentWillMount() {
+//     console.log("componentWillMount");
+//   }
 
   componentDidMount() {
     console.log("componentDidMount");
@@ -30,12 +37,19 @@ export default class LifeCyclePage extends Component {
     return count !== 3;
   }
 
-  componentWillUpdate() {
-    console.log("componentWillUpdate");
+  getSnapshotBeforeUpdate(prevProps,prevState){
+      console.log('getSnapshotBeforeUpdate',prevProps,prevState)
+      return {
+          msg:'我是getSnapshotBeforeUpdate'
+      }
   }
 
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
+//   UNSAFE_componentWillUpdate() {
+//     console.log("componentWillUpdate");
+//   }
+
+  componentDidUpdate(prevProps,prevState,snapshot) {
+    console.log("componentDidUpdate",prevProps,prevState,snapshot);
   }
 
   setCount = () => {
@@ -61,9 +75,9 @@ class Child extends Component {
     console.log("child componentWillUnmount");
   }
   //初次渲染的时候不会执行,只有在已挂载的组件接收新的props的时候,才会执行
-  componentWillReceiveProps(nextProps){
-      console.log('child componentWillReceiveProps',nextProps)
-  }
+//   UNSAFE_componentWillReceiveProps(nextProps){
+//       console.log('child componentWillReceiveProps',nextProps)
+//   }
   render() {
     console.log("Child render");
     const { count } = this.props;
