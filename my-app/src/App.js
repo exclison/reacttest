@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
-import './App.css';
-import ClassComponent from './pages/ClassComponent'
-import FunctionComponent from './pages/FunctionComponent'
-import SetStatePage from './pages/SetStatePage'
-import LifeCyclePage from './pages/LifeCyclePage'
-import ReduxPage from './pages/ReduxPage'
+import "./App.css";
+import ClassComponent from "./pages/ClassComponent";
+import FunctionComponent from "./pages/FunctionComponent";
+import SetStatePage from "./pages/SetStatePage";
+import LifeCyclePage from "./pages/LifeCyclePage";
+import ReduxPage from "./pages/ReduxPage";
+import ReactReduxPage from "./pages/ReactReduxPage";
 
 function App() {
   return (
@@ -25,11 +26,12 @@ function App() {
         </a>
       </header> */}
       <div>
-      <ClassComponent></ClassComponent>
-      <FunctionComponent></FunctionComponent>
-      <SetStatePage></SetStatePage>
-      <LifeCyclePage></LifeCyclePage>
-      <ReduxPage></ReduxPage>
+        <ClassComponent></ClassComponent>
+        <FunctionComponent></FunctionComponent>
+        <SetStatePage></SetStatePage>
+        <LifeCyclePage></LifeCyclePage>
+        <ReduxPage></ReduxPage>
+        <ReactReduxPage></ReactReduxPage>
       </div>
     </div>
   );
